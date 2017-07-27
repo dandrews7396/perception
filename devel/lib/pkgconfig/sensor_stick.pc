@@ -1,0 +1,8 @@
+prefix=/home/robond/perception/devel
+
+Name: sensor_stick
+Description: Description of sensor_stick
+Version: 0.0.0
+Cflags: -I/home/robond/perception/devel/include
+Libs: -L/home/robond/perception/devel/lib 
+Requires: message_runtime

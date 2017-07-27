@@ -1,0 +1,2 @@
+sensor_stick
+-DCATKIN_DEVEL_PREFIX=/home/robond/perception/devel -DCMAKE_INSTALL_PREFIX=/home/robond/perception/install -G Unix Makefiles

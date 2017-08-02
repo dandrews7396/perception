@@ -39,11 +39,11 @@ if __name__ == '__main__':
     for model_name in models:
         spawn_model(model_name)
 
-        for i in range(25):
+        for i in range(45):
             # make five attempts to get a valid a point cloud then give up
             sample_was_good = False
             try_count = 0
-            while not sample_was_good and try_count < 25:
+            while not sample_was_good and try_count < 45:
                 sample_cloud = capture_sample()
                 sample_cloud_arr = ros_to_pcl(sample_cloud).to_array()
 

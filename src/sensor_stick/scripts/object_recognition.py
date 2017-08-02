@@ -114,7 +114,7 @@ def pcl_callback(pcl_msg):
 
     for index, pts_list in enumerate(cluster_indices):
         # Grab the points for the cluster
-        pcl_cluster = cloud_out.extract(pts_list)
+        pcl_cluster = cloud_objects.extract(pts_list)
 
         # Convert from pcl to ROS
         ros_cloud_array = pcl_to_ros(pcl_cluster)
@@ -138,7 +138,7 @@ def pcl_callback(pcl_msg):
         # Add the detected object to the list of detected objects.
         do = DetectedObject()
         do.label = label
-        do.cloud = ros_cluster
+        do.cloud = ros_cloud_array
         detected_objects.append(do)
 
     rospy.loginfo('Detected {} objects: {}'.format(len(detected_objects_labels), detected_objects_labels))
@@ -155,6 +155,9 @@ if __name__ == '__main__':
     pcl_sub = rospy.Subscriber("/sensor_stick/point_cloud", pc2.PointCloud2, pcl_callback, queue_size = 1)
     
     # Create Publishers
+    pcl_objects_pub = rospy.Publisher("/pcl_objects", PointCloud2, queue_size=1)
+    pcl_table_pub = rospy.Publisher("/pcl_table", PointCloud2, queue_size=1)
+    pcl_cluster_pub = rospy.Publisher("/pcl_cluster", PointCloud2, queue_size=1)
     object_markers_pub = rospy.Publisher("/object_markers", Marker, queue_size=1)
     detected_objects_pub = rospy.Publisher("/detected_objects", DetectedObjectsArray, queue_size=1)
 

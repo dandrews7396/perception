@@ -1,0 +1,8 @@
+prefix=/home/robond/perception/install
+
+Name: pr2_robot
+Description: Description of pr2_robot
+Version: 0.0.0
+Cflags: -I/home/robond/perception/install/include
+Libs: -L/home/robond/perception/install/lib 
+Requires: 

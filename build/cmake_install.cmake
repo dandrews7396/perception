@@ -117,7 +117,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/robond/perception/build/gtest/cmake_install.cmake")
+  include("/home/robond/perception/build/RoboND-Perception-Project/gazebo_grasp_plugin/cmake_install.cmake")
   include("/home/robond/perception/build/sensor_stick/cmake_install.cmake")
+  include("/home/robond/perception/build/RoboND-Perception-Project/pr2_robot/cmake_install.cmake")
+  include("/home/robond/perception/build/RoboND-Perception-Project/pr2_moveit/cmake_install.cmake")
 
 endif()
 
